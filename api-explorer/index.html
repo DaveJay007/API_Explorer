@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>API Explorer — Learn by calling real APIs</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1>API Explorer</h1>
+      <p class="tagline">Call real APIs from the browser. No backend — just <code>fetch()</code>.</p>
+    </header>
+
+    <main class="main">
+      <section class="api-card" data-api="randomuser">
+        <div class="api-card-header">
+          <h2>Random User</h2>
+          <span class="api-badge">GET</span>
+          <code class="api-endpoint">https://randomuser.me/api/</code>
+        </div>
+        <p class="api-desc">Returns a random user with name, email, picture, and location. No API key required.</p>
+        <button type="button" class="btn btn-primary" data-try="randomuser">Try it</button>
+        <div class="response-box" data-response="randomuser" aria-live="polite">
+          <div class="response-placeholder">Response will appear here.</div>
+        </div>
+      </section>
+
+      <section class="api-card" data-api="dog">
+        <div class="api-card-header">
+          <h2>Dog CEO — Random dog</h2>
+          <span class="api-badge">GET</span>
+          <code class="api-endpoint">https://dog.ceo/api/breeds/image/random</code>
+        </div>
+        <p class="api-desc">Returns a random dog image URL. Great for testing images in your app.</p>
+        <button type="button" class="btn btn-primary" data-try="dog">Try it</button>
+        <div class="response-box" data-response="dog" aria-live="polite">
+          <div class="response-placeholder">Response will appear here.</div>
+        </div>
+      </section>
+
+      <section class="api-card" data-api="quotable">
+        <div class="api-card-header">
+          <h2>Quotable — Random quote</h2>
+          <span class="api-badge">GET</span>
+          <code class="api-endpoint">https://api.quotable.io/random</code>
+        </div>
+        <p class="api-desc">Returns a random quote with author.</p>
+        <button type="button" class="btn btn-primary" data-try="quotable">Try it</button>
+        <div class="response-box" data-response="quotable" aria-live="polite">
+          <div class="response-placeholder">Response will appear here.</div>
+        </div>
+      </section>
+
+      <section class="api-card" data-api="countries">
+        <div class="api-card-header">
+          <h2>REST Countries</h2>
+          <span class="api-badge">GET</span>
+          <code class="api-endpoint">https://restcountries.com/v3.1/name/sierra</code>
+        </div>
+        <p class="api-desc">Search countries by name. We fetch countries matching "sierra".</p>
+        <button type="button" class="btn btn-primary" data-try="countries">Try it</button>
+        <div class="response-box" data-response="countries" aria-live="polite">
+          <div class="response-placeholder">Response will appear here.</div>
+        </div>
+      </section>
+
+      <section class="api-card" data-api="github">
+        <div class="api-card-header">
+          <h2>GitHub — User repos</h2>
+          <span class="api-badge">GET</span>
+          <code class="api-endpoint">https://api.github.com/users/<em>username</em>/repos</code>
+        </div>
+        <p class="api-desc">Public repo list for any GitHub user. No token needed.</p>
+        <label class="input-label" for="github-username">Username</label>
+        <input type="text" id="github-username" class="input" placeholder="e.g. octocat" value="octocat" />
+        <button type="button" class="btn btn-primary" data-try="github">Try it</button>
+        <div class="response-box" data-response="github" aria-live="polite">
+          <div class="response-placeholder">Response will appear here.</div>
+        </div>
+      </section>
+
+      <section class="api-card api-card-custom">
+        <div class="api-card-header">
+          <h2>Custom GET request</h2>
+          <span class="api-badge">GET</span>
+        </div>
+        <p class="api-desc">Call any public API that allows browser requests (CORS).</p>
+        <label class="input-label" for="custom-url">URL</label>
+        <input type="url" id="custom-url" class="input" placeholder="https://api.example.com/data" />
+        <button type="button" class="btn btn-secondary" data-try="custom">Send request</button>
+        <div class="response-box" data-response="custom" aria-live="polite">
+          <div class="response-placeholder">Response will appear here.</div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Built with vanilla JS and <code>fetch()</code>. All APIs are free and don't require a key for basic use.</p>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
